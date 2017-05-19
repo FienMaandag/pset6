@@ -16,17 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
     
-    @IBAction func loginButtonClicked(_ sender: UIButton) {
+    @IBAction func loginButtonClicked(_ sender: AnyObject) {
         Auth.auth().signIn(withEmail: loginEmailTextField.text!,
                                password: loginPasswordTextField.text!)
-        // 1
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            // 2
-            if user != nil {
-                // 3
-                self.performSegue(withIdentifier: self.loginToList, sender: nil)
-            }
-        }
     }
     
     @IBAction func registerButtonClicked(_ sender: UIButton) {
@@ -69,13 +61,20 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // 1
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            // 2
+            if user != nil {
+                // 3
+                self.performSegue(withIdentifier: self.loginToList, sender: nil)
+            }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

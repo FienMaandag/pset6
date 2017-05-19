@@ -17,12 +17,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = User(uid: "FakeId", email: "hungry@person.food")
-        
-        Auth.auth().addStateDidChangeListener { auth, user in
-            guard let user = user else { return }
-            self.user = User(authData: user)
-        }
     }
 
     override func didReceiveMemoryWarning() {

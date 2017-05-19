@@ -1,5 +1,5 @@
 //
-//  PlantTableViewCell.swift
+//  FoundPlantTableViewCell.swift
 //  FMaandag-pset6
 //
 //  Created by Fien Maandag on 19-05-17.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
-class PlantTableViewCell: UITableViewCell {
+class FoundPlantTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
