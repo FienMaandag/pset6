@@ -7,21 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158B0B8DD4FCCD8CE3A85E44 /* Pods_FMaandag_pset6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F272BC53E5D89CBD6582EF0 /* Pods_FMaandag_pset6.framework */; };
 		21621FD11ECF0643008EEDD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FD01ECF0643008EEDD2 /* AppDelegate.swift */; };
-		21621FD31ECF0643008EEDD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FD21ECF0643008EEDD2 /* ViewController.swift */; };
+		21621FD31ECF0643008EEDD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FD21ECF0643008EEDD2 /* LoginViewController.swift */; };
 		21621FD61ECF0643008EEDD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21621FD41ECF0643008EEDD2 /* Main.storyboard */; };
 		21621FD81ECF0643008EEDD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21621FD71ECF0643008EEDD2 /* Assets.xcassets */; };
 		21621FDB1ECF0643008EEDD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21621FD91ECF0643008EEDD2 /* LaunchScreen.storyboard */; };
+		21621FE51ECF21CC008EEDD2 /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FE41ECF21CC008EEDD2 /* PlantsViewController.swift */; };
+		21621FEA1ECF614C008EEDD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21621FE91ECF614C008EEDD2 /* GoogleService-Info.plist */; };
+		21621FEC1ECF64BD008EEDD2 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FEB1ECF64BD008EEDD2 /* PlantTableViewCell.swift */; };
+		21621FEE1ECF6A59008EEDD2 /* PlantTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FED1ECF6A59008EEDD2 /* PlantTypes.swift */; };
+		21621FF01ECF6B15008EEDD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FEF1ECF6B15008EEDD2 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21621FCD1ECF0643008EEDD2 /* FMaandag-pset6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FMaandag-pset6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21621FD01ECF0643008EEDD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21621FD21ECF0643008EEDD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21621FD21ECF0643008EEDD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		21621FD51ECF0643008EEDD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21621FD71ECF0643008EEDD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21621FDA1ECF0643008EEDD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21621FDC1ECF0643008EEDD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21621FE41ECF21CC008EEDD2 /* PlantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsViewController.swift; sourceTree = "<group>"; };
+		21621FE81ECF2638008EEDD2 /* FMaandag-pset6.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FMaandag-pset6.entitlements"; sourceTree = "<group>"; };
+		21621FE91ECF614C008EEDD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		21621FEB1ECF64BD008EEDD2 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		21621FED1ECF6A59008EEDD2 /* PlantTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantTypes.swift; sourceTree = "<group>"; };
+		21621FEF1ECF6B15008EEDD2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2A8003012EA0451F129EF180 /* Pods-FMaandag-pset6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMaandag-pset6.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMaandag-pset6/Pods-FMaandag-pset6.debug.xcconfig"; sourceTree = "<group>"; };
+		2F272BC53E5D89CBD6582EF0 /* Pods_FMaandag_pset6.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMaandag_pset6.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C56DB14F294C631E666228 /* Pods-FMaandag-pset6.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMaandag-pset6.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMaandag-pset6/Pods-FMaandag-pset6.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158B0B8DD4FCCD8CE3A85E44 /* Pods_FMaandag_pset6.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,8 @@
 			children = (
 				21621FCF1ECF0643008EEDD2 /* FMaandag-pset6 */,
 				21621FCE1ECF0643008EEDD2 /* Products */,
+				BB728D493F737A715F4D63B1 /* Pods */,
+				332CF3E83BDD196BC0567CB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +72,37 @@
 		21621FCF1ECF0643008EEDD2 /* FMaandag-pset6 */ = {
 			isa = PBXGroup;
 			children = (
+				21621FE91ECF614C008EEDD2 /* GoogleService-Info.plist */,
+				21621FE81ECF2638008EEDD2 /* FMaandag-pset6.entitlements */,
 				21621FD01ECF0643008EEDD2 /* AppDelegate.swift */,
-				21621FD21ECF0643008EEDD2 /* ViewController.swift */,
+				21621FD21ECF0643008EEDD2 /* LoginViewController.swift */,
+				21621FE41ECF21CC008EEDD2 /* PlantsViewController.swift */,
+				21621FEB1ECF64BD008EEDD2 /* PlantTableViewCell.swift */,
+				21621FED1ECF6A59008EEDD2 /* PlantTypes.swift */,
+				21621FEF1ECF6B15008EEDD2 /* User.swift */,
 				21621FD41ECF0643008EEDD2 /* Main.storyboard */,
 				21621FD71ECF0643008EEDD2 /* Assets.xcassets */,
 				21621FD91ECF0643008EEDD2 /* LaunchScreen.storyboard */,
 				21621FDC1ECF0643008EEDD2 /* Info.plist */,
 			);
 			path = "FMaandag-pset6";
+			sourceTree = "<group>";
+		};
+		332CF3E83BDD196BC0567CB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F272BC53E5D89CBD6582EF0 /* Pods_FMaandag_pset6.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB728D493F737A715F4D63B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A8003012EA0451F129EF180 /* Pods-FMaandag-pset6.debug.xcconfig */,
+				77C56DB14F294C631E666228 /* Pods-FMaandag-pset6.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21621FDF1ECF0643008EEDD2 /* Build configuration list for PBXNativeTarget "FMaandag-pset6" */;
 			buildPhases = (
+				77842A4C28F3696C055DBCB8 /* [CP] Check Pods Manifest.lock */,
 				21621FC91ECF0642008EEDD2 /* Sources */,
 				21621FCA1ECF0642008EEDD2 /* Frameworks */,
 				21621FCB1ECF0642008EEDD2 /* Resources */,
+				E82C0D41C050831C38DA6197 /* [CP] Embed Pods Frameworks */,
+				2734FD9CCB2161739852EF8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +142,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8FQYY82D7T;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21621FDB1ECF0643008EEDD2 /* LaunchScreen.storyboard in Resources */,
+				21621FEA1ECF614C008EEDD2 /* GoogleService-Info.plist in Resources */,
 				21621FD81ECF0643008EEDD2 /* Assets.xcassets in Resources */,
 				21621FD61ECF0643008EEDD2 /* Main.storyboard in Resources */,
 			);
@@ -132,12 +182,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2734FD9CCB2161739852EF8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMaandag-pset6/Pods-FMaandag-pset6-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77842A4C28F3696C055DBCB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E82C0D41C050831C38DA6197 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMaandag-pset6/Pods-FMaandag-pset6-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21621FC91ECF0642008EEDD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21621FD31ECF0643008EEDD2 /* ViewController.swift in Sources */,
+				21621FEE1ECF6A59008EEDD2 /* PlantTypes.swift in Sources */,
+				21621FD31ECF0643008EEDD2 /* LoginViewController.swift in Sources */,
+				21621FF01ECF6B15008EEDD2 /* User.swift in Sources */,
+				21621FEC1ECF64BD008EEDD2 /* PlantTableViewCell.swift in Sources */,
+				21621FE51ECF21CC008EEDD2 /* PlantsViewController.swift in Sources */,
 				21621FD11ECF0643008EEDD2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,8 +363,10 @@
 		};
 		21621FE01ECF0643008EEDD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A8003012EA0451F129EF180 /* Pods-FMaandag-pset6.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FMaandag-pset6/FMaandag-pset6.entitlements";
 				DEVELOPMENT_TEAM = 8FQYY82D7T;
 				INFOPLIST_FILE = "FMaandag-pset6/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -274,8 +378,10 @@
 		};
 		21621FE11ECF0643008EEDD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C56DB14F294C631E666228 /* Pods-FMaandag-pset6.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FMaandag-pset6/FMaandag-pset6.entitlements";
 				DEVELOPMENT_TEAM = 8FQYY82D7T;
 				INFOPLIST_FILE = "FMaandag-pset6/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -304,6 +410,7 @@
 				21621FE11ECF0643008EEDD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
