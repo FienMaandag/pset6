@@ -100,8 +100,8 @@
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="My Plants" id="neN-Iy-t84"/>
-                                    <tabBarItem title="Friends Plants" id="7gY-Cy-M5V"/>
+                                    <tabBarItem title="My Plants" image="plant_icon" id="neN-Iy-t84"/>
+                                    <tabBarItem title="Friends Plants" image="friends_icon" id="7gY-Cy-M5V"/>
                                 </items>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NeR-2t-Aeq">
@@ -118,12 +118,15 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-4O-Pjk">
                                                     <rect key="frame" x="8" y="12" width="88" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" red="0.3538350126" green="0.57270077720000001" blue="0.3944104349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myPlantNameLabel" destination="kbg-4O-Pjk" id="rcu-HM-c2D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -182,7 +185,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VEo-dn-Wx2" id="uFg-Jc-WpX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raj-r6-rzR">
+                                                    <rect key="frame" x="8" y="12" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" red="0.3538350126" green="0.57270077720000001" blue="0.3944104349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foundPlantLabel" destination="raj-r6-rzR" id="b2M-RA-eNV"/>
+                                            <segue destination="b9C-Kv-uFM" kind="show" id="eGu-Fr-Ql5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -203,10 +219,55 @@
                             <constraint firstItem="FHt-ul-fZR" firstAttribute="top" secondItem="id9-tE-wjd" secondAttribute="bottom" id="ond-uB-Ysv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="FHt-ul-fZR" id="uLH-6a-LWu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s65-yq-NUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2532" y="39.130434782608695"/>
+        </scene>
+        <!--New Plant View Controller-->
+        <scene sceneID="TwP-Xj-xrA">
+            <objects>
+                <viewController id="b9C-Kv-uFM" customClass="NewPlantViewController" customModule="FMaandag_pset6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HeV-07-Gbw"/>
+                        <viewControllerLayoutGuide type="bottom" id="FSv-Re-TSV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="omC-Ha-fkL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-N8-B2c">
+                                <rect key="frame" x="0.0" y="141" width="375" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <color key="textColor" red="0.3538350126" green="0.57270077720000001" blue="0.3944104349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4N-1z-Vbl">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addPlantButtonClicked:" destination="b9C-Kv-uFM" eventType="touchUpInside" id="EsG-rd-BtZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yBb-N8-B2c" firstAttribute="top" secondItem="HeV-07-Gbw" secondAttribute="bottom" constant="77" id="ZJ1-jQ-SgD"/>
+                            <constraint firstItem="yBb-N8-B2c" firstAttribute="leading" secondItem="omC-Ha-fkL" secondAttribute="leading" id="iZC-6j-7yZ"/>
+                            <constraint firstAttribute="trailing" secondItem="yBb-N8-B2c" secondAttribute="trailing" id="sDc-ux-FrI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="plantNameLabel" destination="yBb-N8-B2c" id="fQB-cg-o19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PqI-m3-z3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3340" y="44.527736131934034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6qH-lQ-Ubk">
@@ -227,4 +288,8 @@
             <point key="canvasLocation" x="768.79999999999995" y="39.130434782608695"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="friends_icon" width="16" height="16"/>
+        <image name="plant_icon" width="16" height="16"/>
+    </resources>
 </document>

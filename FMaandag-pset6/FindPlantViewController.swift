@@ -10,47 +10,16 @@ import UIKit
 
 class FindPlantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var foundPlants = [(id: Int64, name: String)]()
-    var url = "http://www.growstuff.org/crops/1.json"
+    @IBOutlet weak var tableView: UITableView!
+
+    var foundPlants = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        jsonParser()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    enum JSONError: String, Error {
-        case NoData = "ERROR: no data"
-        case ConversionFailed = "ERROR: conversion from JSON failed"
-    }
-    
-    func jsonParser() {
-        let urlPath = url
-        guard let endpoint = URL(string: urlPath) else {
-            print("Error creating endpoint")
-            return
-        }
-        URLSession.shared.dataTask(with: endpoint) { (data, response, error) in
-            do {
-                guard let data = data else {
-                    throw JSONError.NoData
-                }
-                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                    throw JSONError.ConversionFailed
-                }
-                print(json)
-            } catch let error as JSONError {
-                print(error.rawValue)
-            } catch let error as NSError {
-                print(error.debugDescription)
-            }
-            }.resume()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +31,18 @@ class FindPlantViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "foundPlantCell", for: indexPath) as! FoundPlantTableViewCell
         let plant = foundPlants[indexPath.row]
         
+        cell.foundPlantLabel.text = plant
+        
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addVC = segue.destination as? NewPlantViewController{
+            if let path = tableView.indexPathForSelectedRow{
+                addVC.plantName = self.foundPlants[path.row]
+            }
+            
+        }
+    }
+    
 }

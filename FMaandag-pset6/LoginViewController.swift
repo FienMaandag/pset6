@@ -16,25 +16,38 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginEmailTextField: UITextField!
     @IBOutlet weak var loginPasswordTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // from tutorial
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.performSegue(withIdentifier: self.loginToList, sender: nil)
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     @IBAction func loginButtonClicked(_ sender: AnyObject) {
         Auth.auth().signIn(withEmail: loginEmailTextField.text!,
                                password: loginPasswordTextField.text!)
     }
     
+    // from tutorial
     @IBAction func registerButtonClicked(_ sender: UIButton) {
         let alert = UIAlertController(title: "Register",
                                       message: "Register",
                                       preferredStyle: .alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { action in
-            // 1
             let emailField = alert.textFields![0]
             let passwordField = alert.textFields![1]
-                                        
-            // 2
+            
             Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
                 if error == nil {
-                    // 3
                     Auth.auth().signIn(withEmail: self.loginEmailTextField.text!, password: self.loginPasswordTextField.text!)
                 }
             }
@@ -56,25 +69,6 @@ class LoginViewController: UIViewController {
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // 1
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            // 2
-            if user != nil {
-                // 3
-                self.performSegue(withIdentifier: self.loginToList, sender: nil)
-            }
-        }
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

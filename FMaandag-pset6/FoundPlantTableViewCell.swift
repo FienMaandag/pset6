@@ -9,6 +9,8 @@
 import UIKit
 
 class FoundPlantTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var foundPlantLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

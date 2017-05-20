@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		158B0B8DD4FCCD8CE3A85E44 /* Pods_FMaandag_pset6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F272BC53E5D89CBD6582EF0 /* Pods_FMaandag_pset6.framework */; };
+		212123CE1ED0B6F4006B5775 /* NewPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212123CD1ED0B6F4006B5775 /* NewPlantViewController.swift */; };
 		21621FD11ECF0643008EEDD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FD01ECF0643008EEDD2 /* AppDelegate.swift */; };
 		21621FD31ECF0643008EEDD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21621FD21ECF0643008EEDD2 /* LoginViewController.swift */; };
 		21621FD61ECF0643008EEDD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21621FD41ECF0643008EEDD2 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212123CD1ED0B6F4006B5775 /* NewPlantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlantViewController.swift; sourceTree = "<group>"; };
 		21621FCD1ECF0643008EEDD2 /* FMaandag-pset6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FMaandag-pset6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21621FD01ECF0643008EEDD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21621FD21ECF0643008EEDD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -81,13 +83,14 @@
 				21621FD01ECF0643008EEDD2 /* AppDelegate.swift */,
 				21621FD21ECF0643008EEDD2 /* LoginViewController.swift */,
 				21621FE41ECF21CC008EEDD2 /* PlantsViewController.swift */,
-				21621FEB1ECF64BD008EEDD2 /* PlantTableViewCell.swift */,
 				21621FF21ECF827A008EEDD2 /* FindPlantViewController.swift */,
+				212123CD1ED0B6F4006B5775 /* NewPlantViewController.swift */,
+				21621FEB1ECF64BD008EEDD2 /* PlantTableViewCell.swift */,
 				21621FF41ECF83D3008EEDD2 /* FoundPlantTableViewCell.swift */,
 				21621FED1ECF6A59008EEDD2 /* PlantTypes.swift */,
 				21621FEF1ECF6B15008EEDD2 /* User.swift */,
-				21621FD41ECF0643008EEDD2 /* Main.storyboard */,
 				21621FD71ECF0643008EEDD2 /* Assets.xcassets */,
+				21621FD41ECF0643008EEDD2 /* Main.storyboard */,
 				21621FD91ECF0643008EEDD2 /* LaunchScreen.storyboard */,
 				21621FDC1ECF0643008EEDD2 /* Info.plist */,
 			);
@@ -244,6 +247,7 @@
 				21621FEE1ECF6A59008EEDD2 /* PlantTypes.swift in Sources */,
 				21621FD31ECF0643008EEDD2 /* LoginViewController.swift in Sources */,
 				21621FF01ECF6B15008EEDD2 /* User.swift in Sources */,
+				212123CE1ED0B6F4006B5775 /* NewPlantViewController.swift in Sources */,
 				21621FEC1ECF64BD008EEDD2 /* PlantTableViewCell.swift in Sources */,
 				21621FF31ECF827B008EEDD2 /* FindPlantViewController.swift in Sources */,
 				21621FE51ECF21CC008EEDD2 /* PlantsViewController.swift in Sources */,
