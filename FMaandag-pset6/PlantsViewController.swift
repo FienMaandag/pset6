@@ -11,12 +11,13 @@ import Firebase
 
 class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-//    var plants: [PlantTypes] = []
-//    var user: User!
+    @IBOutlet weak var tableView: UITableView!
     
-    var plants = [(name: String, addedBy: String)]()
-    
+    var plants: [PlantTypes] = []
+    var user: CurrentUser!
     let ref = Database.database().reference(withPath: "plant-types")
+    let usersRef = Database.database().reference(withPath: "online")
+
     
     var foundPlants = [String]()
     var url = "http://www.growstuff.org/crops.json"
@@ -27,8 +28,36 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
-            let currentUser = user.email!
-            UserDefaults.standard.set(currentUser, forKey: "current")
+            self.user = CurrentUser(authData: user)
+            let currentUserRef = self.usersRef.child(self.user.uid)
+            currentUserRef.setValue(self.user.email)
+            currentUserRef.onDisconnectRemoveValue()
+        }
+        
+        ref.observe(.value, with: { snapshot in
+            var newPlants: [PlantTypes] = []
+            print("1")
+            for item in snapshot.children {
+                print("2")
+                let plantTypes = PlantTypes(snapshot: item as! DataSnapshot)
+                print("3")
+                newPlants.append(plantTypes)
+                print("4")
+            }
+            
+            self.plants = newPlants
+            print("5")
+            self.tableView.reloadData()
+            print("6")
+        })
+    }
+    
+    @IBAction func logOutClicked(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        } catch {
+            
         }
     }
 
@@ -49,9 +78,11 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath) as! PlantTableViewCell
+        print("7")
         let plantSort = plants[indexPath.row].name
-        
+        print(plantSort)
         cell.myPlantNameLabel.text = plantSort
+        print("9")
         
         return cell
     }

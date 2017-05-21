@@ -125,7 +125,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="myPlantNameLabel" destination="kbg-4O-Pjk" id="rcu-HM-c2D"/>
+                                            <outlet property="myPlantNameLabel" destination="kbg-4O-Pjk" id="tkA-QC-L7K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -148,12 +148,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hzV-O5-JEw">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="AfU-UI-8Hg">
+                            <connections>
+                                <action selector="logOutClicked:" destination="MTN-fl-Roj" id="1gs-CY-SMK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="92t-Ir-hcT">
                             <connections>
                                 <segue destination="sea-Dl-qZE" kind="show" identifier="FindPlant" id="p7d-PD-iI3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="NeR-2t-Aeq" id="qIl-Vs-YLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8X-W4-W8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,8 +15,9 @@ class NewPlantViewController: UIViewController {
     @IBOutlet weak var plantNameLabel: UILabel!
     
     var plants: [PlantTypes] = []
-    var user: User!
+    var user: CurrentUser!
     let ref = Database.database().reference(withPath: "plant-types")
+    let usersRef = Database.database().reference(withPath: "online")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +26,17 @@ class NewPlantViewController: UIViewController {
         // TODO add extra information
     }
     
-    @IBAction func addPlantButtonClicked(_ sender: UIButton) {
-        // TODO add plant to firebase for current user
-        let name = plantName
+    @IBAction func addPlantButtonClicked(_ sender: AnyObject) {
+        let user = Auth.auth().currentUser
+        let text = plantName
         
-        let email: String = UserDefaults.standard.string(forKey: "current")
+        let plantTypes = PlantTypes(name: text,
+                                    addedByUser: (user?.email!)!)
+
+        let plantTypesRef = self.ref.child(text.lowercased())
         
-        let plantType = (name: name, addedByUser: email)
-        
-        let plantTypeRef = self.ref.child(plantName.lowercased())
-        
-        plantTypeRef.setValue(plantType.toAnyObject())
-        
+        plantTypesRef.setValue(plantTypes.toAnyObject())
+
         self.navigationController?.popToRootViewController(animated: true)
     }
 

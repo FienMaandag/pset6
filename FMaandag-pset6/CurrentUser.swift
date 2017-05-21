@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import Firebase
 
-struct User {
+struct CurrentUser {
     
     let uid: String
     let email: String
     
     init(authData: User) {
         uid = authData.uid
-        email = authData.email
+        email = authData.email!
     }
     
     init(uid: String, email: String) {
@@ -24,3 +25,4 @@ struct User {
     }
     
 }
+
