@@ -34,23 +34,23 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             currentUserRef.onDisconnectRemoveValue()
         }
         
-        ref.observe(.value, with: { snapshot in
-            var newPlants: [PlantTypes] = []
-            print("1")
-            for item in snapshot.children {
-                print("2")
-                let plantTypes = PlantTypes(snapshot: item as! DataSnapshot)
-                print("3")
-                newPlants.append(plantTypes)
-                print("4")
+        let username = Auth.auth().currentUser?.email
+        let searchRef = Database.database().reference().child("plant-types").queryOrdered(byChild: "addedByUser").queryEqual(toValue: username)
+
+        searchRef.observe(.value, with: { snapshot in
+        var newPlants: [PlantTypes] = []
+        for item in snapshot.children {
+            let plantTypes = PlantTypes(snapshot: item as! DataSnapshot)
+    
+            newPlants.append(plantTypes)
             }
-            
             self.plants = newPlants
-            print("5")
             self.tableView.reloadData()
-            print("6")
-        })
+        }) { (error) in
+                print("Failed to get snapshot", error.localizedDescription)
+            }
     }
+
     
     @IBAction func logOutClicked(_ sender: Any) {
         do {
@@ -78,16 +78,17 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath) as! PlantTableViewCell
-        print("7")
         let plantSort = plants[indexPath.row].name
-        print(plantSort)
         cell.myPlantNameLabel.text = plantSort
-        print("9")
-        
         return cell
     }
     
-    // TODO delete function
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let selectedPlant = plants[indexPath.row]
+            selectedPlant.ref?.removeValue()
+        }
+    }
     
     enum JSONError: String, Error {
         case NoData = "ERROR: no data"

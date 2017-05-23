@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I5-j4-QqF">
-                                <rect key="frame" x="107" y="110" width="160" height="77"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I5-j4-QqF">
+                                <rect key="frame" x="0.0" y="110" width="375" height="77"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="64"/>
                                 <color key="textColor" red="0.35383501264184103" green="0.57270077720207246" blue="0.39441043488953487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zgj-c6-IHf"/>
-                                    <segue destination="aBC-NE-DO3" kind="show" identifier="LoginToList" id="W7c-tU-Lj1"/>
+                                    <segue destination="aBC-NE-DO3" kind="presentation" identifier="LoginToList" id="Yy4-xw-Iqb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-rP-xim">
@@ -64,14 +64,14 @@
                             <constraint firstItem="NSs-m1-WwR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="DRC-Kq-Sek"/>
                             <constraint firstItem="NSs-m1-WwR" firstAttribute="top" secondItem="7I5-j4-QqF" secondAttribute="bottom" constant="74" id="H3l-ly-74C"/>
                             <constraint firstItem="DUk-A9-2lW" firstAttribute="top" secondItem="NSs-m1-WwR" secondAttribute="bottom" constant="8" id="Neg-qd-WrJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7I5-j4-QqF" secondAttribute="trailing" constant="92" id="TGv-3e-9Oe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NSs-m1-WwR" secondAttribute="trailing" constant="44" id="XQd-XR-xRH"/>
+                            <constraint firstAttribute="trailing" secondItem="7I5-j4-QqF" secondAttribute="trailing" id="XcA-Yj-jLd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Wm-rP-xim" secondAttribute="trailing" constant="92" id="Xyf-st-C3h"/>
-                            <constraint firstItem="7I5-j4-QqF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="91" id="fNt-hb-76r"/>
                             <constraint firstItem="7I5-j4-QqF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="mjW-Bf-fkj"/>
                             <constraint firstItem="3qM-xk-3j1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="91" id="p1i-At-gga"/>
                             <constraint firstItem="2Wm-rP-xim" firstAttribute="top" secondItem="3qM-xk-3j1" secondAttribute="bottom" constant="8" id="qkr-E7-7FS"/>
                             <constraint firstItem="3qM-xk-3j1" firstAttribute="top" secondItem="DUk-A9-2lW" secondAttribute="bottom" constant="8" id="rZi-OB-eAR"/>
+                            <constraint firstItem="7I5-j4-QqF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yZx-gj-7Am"/>
                             <constraint firstItem="2Wm-rP-xim" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="91" id="yqB-5H-Yzt"/>
                         </constraints>
                     </view>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="39"/>
+            <point key="canvasLocation" x="-20" y="38.23088455772114"/>
         </scene>
         <!--Plants View Controller-->
         <scene sceneID="og3-XK-lbi">
@@ -96,16 +96,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCp-VW-ttn">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="My Plants" image="plant_icon" id="neN-Iy-t84"/>
-                                    <tabBarItem title="Friends Plants" image="friends_icon" id="7gY-Cy-M5V"/>
-                                </items>
-                            </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NeR-2t-Aeq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="plantCell" id="mBO-pl-dhJ" customClass="PlantTableViewCell" customModule="FMaandag_pset6" customModuleProvider="target">
@@ -115,17 +107,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-4O-Pjk">
-                                                    <rect key="frame" x="8" y="12" width="88" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-4O-Pjk">
+                                                    <rect key="frame" x="8" y="12" width="359" height="21"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <color key="textColor" red="0.3538350126" green="0.57270077720000001" blue="0.3944104349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kbg-4O-Pjk" firstAttribute="leading" secondItem="0K7-du-ScS" secondAttribute="leadingMargin" id="VMZ-sI-VQt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kbg-4O-Pjk" secondAttribute="bottom" constant="3" id="ZSi-xy-x7y"/>
+                                                <constraint firstItem="kbg-4O-Pjk" firstAttribute="top" secondItem="0K7-du-ScS" secondAttribute="topMargin" constant="4" id="mgM-mn-l9X"/>
+                                                <constraint firstItem="kbg-4O-Pjk" firstAttribute="trailing" secondItem="0K7-du-ScS" secondAttribute="trailingMargin" id="ubm-pd-bYb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="myPlantNameLabel" destination="kbg-4O-Pjk" id="tkA-QC-L7K"/>
+                                            <segue destination="ptl-iN-9m1" kind="show" id="iJ8-0a-BZ4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -137,14 +135,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NeR-2t-Aeq" firstAttribute="top" secondItem="fgK-Hs-Iou" secondAttribute="bottom" id="BI3-rR-xh8"/>
-                            <constraint firstAttribute="trailing" secondItem="NeR-2t-Aeq" secondAttribute="trailing" id="C0n-GK-gKL"/>
-                            <constraint firstItem="NeR-2t-Aeq" firstAttribute="leading" secondItem="4EW-RG-mCY" secondAttribute="leading" id="Pmc-js-BHA"/>
-                            <constraint firstItem="aCp-VW-ttn" firstAttribute="top" secondItem="NeR-2t-Aeq" secondAttribute="bottom" id="hvn-qS-98e"/>
-                            <constraint firstItem="aCp-VW-ttn" firstAttribute="leading" secondItem="4EW-RG-mCY" secondAttribute="leading" id="i7e-4m-Mwm"/>
-                            <constraint firstItem="aCp-VW-ttn" firstAttribute="top" secondItem="NeR-2t-Aeq" secondAttribute="bottom" id="mXM-L6-6Y5"/>
-                            <constraint firstItem="4rD-wQ-9XP" firstAttribute="top" secondItem="aCp-VW-ttn" secondAttribute="bottom" id="ueD-Wd-tEf"/>
-                            <constraint firstAttribute="trailing" secondItem="aCp-VW-ttn" secondAttribute="trailing" id="uxa-ML-XfR"/>
+                            <constraint firstItem="4rD-wQ-9XP" firstAttribute="top" secondItem="NeR-2t-Aeq" secondAttribute="bottom" id="MSr-aJ-sDl"/>
+                            <constraint firstAttribute="trailing" secondItem="NeR-2t-Aeq" secondAttribute="trailing" id="VZd-Lp-D53"/>
+                            <constraint firstItem="NeR-2t-Aeq" firstAttribute="top" secondItem="fgK-Hs-Iou" secondAttribute="bottom" id="ZfH-4F-pQV"/>
+                            <constraint firstItem="NeR-2t-Aeq" firstAttribute="leading" secondItem="4EW-RG-mCY" secondAttribute="leading" id="jdK-aY-YIr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hzV-O5-JEw">
@@ -179,12 +173,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Find New Plant" translatesAutoresizingMaskIntoConstraints="NO" id="id9-tE-wjd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHt-ul-fZR">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foundPlantCell" id="VEo-dn-Wx2" customClass="FoundPlantTableViewCell" customModule="FMaandag_pset6" customModuleProvider="target">
@@ -205,7 +195,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="foundPlantLabel" destination="raj-r6-rzR" id="b2M-RA-eNV"/>
-                                            <segue destination="b9C-Kv-uFM" kind="show" id="eGu-Fr-Ql5"/>
+                                            <segue destination="b9C-Kv-uFM" kind="show" identifier="showPlant" id="eGu-Fr-Ql5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -217,23 +207,81 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="id9-tE-wjd" firstAttribute="leading" secondItem="AkZ-gY-XNk" secondAttribute="leading" id="ANF-GN-M0W"/>
-                            <constraint firstItem="id9-tE-wjd" firstAttribute="top" secondItem="AKd-4M-Vcq" secondAttribute="bottom" id="LbW-ze-BPv"/>
-                            <constraint firstItem="Bag-Ds-Bn0" firstAttribute="top" secondItem="FHt-ul-fZR" secondAttribute="bottom" id="RQW-M2-oip"/>
-                            <constraint firstAttribute="trailing" secondItem="id9-tE-wjd" secondAttribute="trailing" id="Sad-U4-WTT"/>
-                            <constraint firstItem="FHt-ul-fZR" firstAttribute="leading" secondItem="AkZ-gY-XNk" secondAttribute="leading" id="aqk-pW-U30"/>
-                            <constraint firstAttribute="trailing" secondItem="FHt-ul-fZR" secondAttribute="trailing" id="f5z-gs-8sj"/>
-                            <constraint firstItem="FHt-ul-fZR" firstAttribute="top" secondItem="id9-tE-wjd" secondAttribute="bottom" id="nWT-IY-xPL"/>
-                            <constraint firstItem="FHt-ul-fZR" firstAttribute="top" secondItem="id9-tE-wjd" secondAttribute="bottom" id="ond-uB-Ysv"/>
+                            <constraint firstItem="Bag-Ds-Bn0" firstAttribute="top" secondItem="FHt-ul-fZR" secondAttribute="bottom" id="KoZ-CP-4cS"/>
+                            <constraint firstItem="FHt-ul-fZR" firstAttribute="top" secondItem="AKd-4M-Vcq" secondAttribute="bottom" id="Nu0-0E-7Gi"/>
+                            <constraint firstAttribute="trailing" secondItem="FHt-ul-fZR" secondAttribute="trailing" id="fK7-q0-cQS"/>
+                            <constraint firstItem="FHt-ul-fZR" firstAttribute="leading" secondItem="AkZ-gY-XNk" secondAttribute="leading" id="xnz-ef-y64"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchDisplayController" destination="BY5-5I-gyc" id="A1L-yi-XTb"/>
                         <outlet property="tableView" destination="FHt-ul-fZR" id="uLH-6a-LWu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s65-yq-NUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="BY5-5I-gyc">
+                    <connections>
+                        <outlet property="delegate" destination="sea-Dl-qZE" id="h4O-rO-0Rb"/>
+                        <outlet property="searchContentsController" destination="sea-Dl-qZE" id="uPN-9R-bvs"/>
+                        <outlet property="searchResultsDataSource" destination="sea-Dl-qZE" id="ttb-Nq-L5f"/>
+                        <outlet property="searchResultsDelegate" destination="sea-Dl-qZE" id="isM-Yh-aKI"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2532" y="39.130434782608695"/>
+        </scene>
+        <!--My Plant View Controller-->
+        <scene sceneID="e9c-1W-lpS">
+            <objects>
+                <viewController id="ptl-iN-9m1" customClass="MyPlantViewController" customModule="FMaandag_pset6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yBg-j0-AbA"/>
+                        <viewControllerLayoutGuide type="bottom" id="WTi-5r-di4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B9d-bi-DY2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vic-oU-t7d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <color key="textColor" red="0.3538350126" green="0.57270077720000001" blue="0.3944104349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More info: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc9-8H-aNm">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srm-DM-Ruj">
+                                <rect key="frame" x="0.0" y="122" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last time you gave your plant water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRK-kk-aRO">
+                                <rect key="frame" x="16" y="354" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqv-re-ShA">
+                                <rect key="frame" x="16" y="197" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="I gave my plant water!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QvJ-pZ-3DC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="803.74812593703155"/>
         </scene>
         <!--New Plant View Controller-->
         <scene sceneID="TwP-Xj-xrA">
@@ -254,9 +302,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4N-1z-Vbl">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="318" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addPlantButtonClicked:" destination="b9C-Kv-uFM" eventType="touchUpInside" id="EsG-rd-BtZ"/>
                                 </connections>
@@ -296,8 +344,4 @@
             <point key="canvasLocation" x="768.79999999999995" y="39.130434782608695"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="friends_icon" width="16" height="16"/>
-        <image name="plant_icon" width="16" height="16"/>
-    </resources>
 </document>
