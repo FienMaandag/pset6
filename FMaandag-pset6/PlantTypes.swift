@@ -15,12 +15,14 @@ struct PlantTypes {
     let name: String
     let addedByUser: String
     let ref: DatabaseReference?
+    let nickname: String
     
-    init(name: String, addedByUser: String, key: String = "") {
+    init(name: String, addedByUser: String, key: String = "", nickname: String = "") {
         self.key = key
         self.name = name
         self.addedByUser = addedByUser
         self.ref = nil
+        self.nickname = nickname
     }
     
     init(snapshot: DataSnapshot) {
@@ -29,12 +31,14 @@ struct PlantTypes {
         name = snapshotValue["name"] as! String
         addedByUser = snapshotValue["addedByUser"] as! String
         ref = snapshot.ref
+        nickname = snapshotValue["nickname"] as? String ?? ""
     }
     
     func toAnyObject() -> Any {
         return [
             "name": name,
             "addedByUser": addedByUser,
+            "nickname": nickname,
         ]
     }
     

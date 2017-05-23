@@ -21,9 +21,7 @@ class NewPlantViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        plantNameLabel.text = plantName
-        
-        // TODO add extra information
+        plantNameLabel.text = plantName.capitalized
     }
     
     @IBAction func addPlantButtonClicked(_ sender: AnyObject) {

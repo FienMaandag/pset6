@@ -37,7 +37,7 @@ class FindPlantViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 	{
        let cell = self.tableView.dequeueReusableCell(withIdentifier: "foundPlantCell", for: indexPath as IndexPath) as! FoundPlantTableViewCell
         
-            cell.foundPlantLabel.text = filterdFoundPlants[indexPath.row]
+            cell.foundPlantLabel.text = filterdFoundPlants[indexPath.row].capitalized
         return cell
     }
 

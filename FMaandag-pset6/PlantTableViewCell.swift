@@ -12,6 +12,7 @@ import Firebase
 class PlantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var myPlantNameLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

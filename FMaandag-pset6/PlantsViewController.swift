@@ -78,9 +78,43 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "plantCell", for: indexPath) as! PlantTableViewCell
-        let plantSort = plants[indexPath.row].name
-        cell.myPlantNameLabel.text = plantSort
+        let plantSort = plants[indexPath.row]
+        cell.myPlantNameLabel.text = plantSort.name.capitalized
+        cell.nicknameLabel.text = plantSort.nickname
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Add Nickname",
+                                      message: "name your plant!",
+                                      preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
+            let nicknameField = alert.textFields![0]
+            let cell = tableView.cellForRow(at: indexPath) as! PlantTableViewCell
+            let text = nicknameField.text
+            
+            cell.nicknameLabel.isHidden = false
+            cell.nicknameLabel.text = text
+            
+            let plant = self.plants[indexPath.row]
+            self.ref.updateChildValues([
+                "\(plant.key)/nickname" : text
+            ])
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        
+        alert.addTextField { textNickname in
+            textNickname.placeholder = "Nickname"
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
