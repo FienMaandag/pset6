@@ -11,9 +11,9 @@ import Firebase
 
 class NewPlantViewController: UIViewController {
 
-    var plantName: String = ""
+
     @IBOutlet weak var plantNameLabel: UILabel!
-    
+    var plantName: String = ""
     var plants: [PlantTypes] = []
     var user: CurrentUser!
     let ref = Database.database().reference(withPath: "plant-types")
@@ -24,6 +24,7 @@ class NewPlantViewController: UIViewController {
         plantNameLabel.text = plantName.capitalized
     }
     
+    // Add plant to database
     @IBAction func addPlantButtonClicked(_ sender: AnyObject) {
         let user = Auth.auth().currentUser
         let text = plantName

@@ -2,6 +2,8 @@
 //  LoginViewController.swift
 //  FMaandag-pset6
 //
+//  With help of the tutorial raywenderlich.com/139322/firebase-tutorial-getting-started-2
+//
 //  Created by Fien Maandag on 19-05-17.
 //  Copyright © 2017 Fien Maandag. All rights reserved.
 //
@@ -19,7 +21,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // from tutorial
+        // From the tutorial, checks if login button is pushed
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: self.loginToList, sender: nil)
@@ -32,16 +34,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonClicked(_ sender: AnyObject) {
-        Auth.auth().signIn(withEmail: loginEmailTextField.text!,
-                               password: loginPasswordTextField.text!)
+        Auth.auth().signIn(withEmail: loginEmailTextField.text!, password: loginPasswordTextField.text!)
     }
     
-    // from tutorial
+    // From the tutorial, opens alert for registration
     @IBAction func registerButtonClicked(_ sender: UIButton) {
         let alert = UIAlertController(title: "Register",
                                       message: "Register",
                                       preferredStyle: .alert)
         
+        // Saves given data
         let saveAction = UIAlertAction(title: "Save", style: .default) { action in
             let emailField = alert.textFields![0]
             let passwordField = alert.textFields![1]
@@ -53,8 +55,8 @@ class LoginViewController: UIViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .default)
+        // Closes  alert
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         
         alert.addTextField { textEmail in
             textEmail.placeholder = "Enter your email"

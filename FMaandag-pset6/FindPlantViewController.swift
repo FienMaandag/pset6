@@ -1,25 +1,30 @@
 //
 //  FindPlantViewController.swift
 //  FMaandag-pset6
+// 
+//  With help from the folloeing tutorials 
+//  https://github.com/awseeley/Search-Tutorial/blob/master/TableViewTutorial/ViewController.swift
+//  https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2
 //
 //  Created by Fien Maandag on 19-05-17.
 //  Copyright © 2017 Fien Maandag. All rights reserved.
-//  https://github.com/awseeley/Search-Tutorial/blob/master/TableViewTutorial/ViewController.swift
+//
 
 import UIKit
 
 class FindPlantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+    
     @IBOutlet weak var tableView: UITableView!
 
-    var foundPlants = [String]()
-    var filterdFoundPlants = [String]()
+    var allPlants = [String]()
+    var filterdAllPlants = [String]()
     var shouldShowSearchResults = false
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filterdFoundPlants = foundPlants
+        filterdAllPlants = allPlants
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -30,25 +35,28 @@ class FindPlantViewController: UIViewController, UITableViewDelegate, UITableVie
         super.didReceiveMemoryWarning()
     }
     
+    // Set amount rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.filterdFoundPlants.count
+        return self.filterdAllPlants.count
     }
     
+    // Fill cells of tableview with plants
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 	{
        let cell = self.tableView.dequeueReusableCell(withIdentifier: "foundPlantCell", for: indexPath as IndexPath) as! FoundPlantTableViewCell
         
-            cell.foundPlantLabel.text = filterdFoundPlants[indexPath.row].capitalized
+            cell.foundPlantLabel.text = filterdAllPlants[indexPath.row].capitalized
         return cell
     }
 
 
+    // Update search results
     func updateSearchResults(for searchController: UISearchController) {
         // If we haven't typed anything into the search bar then do not filter the results
         if searchController.searchBar.text! == "" {
-            filterdFoundPlants = foundPlants
+            filterdAllPlants = allPlants
         } else {
             // Filter the results
-            filterdFoundPlants = foundPlants.filter { $0.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+            filterdAllPlants = allPlants.filter { $0.lowercased().contains(searchController.searchBar.text!.lowercased()) }
         }
         
         self.tableView.reloadData()
@@ -57,7 +65,7 @@ class FindPlantViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addVC = segue.destination as? NewPlantViewController{
             if let path = tableView.indexPathForSelectedRow{
-                addVC.plantName = self.filterdFoundPlants[path.row]
+                addVC.plantName = self.filterdAllPlants[path.row]
             }
             
         }
