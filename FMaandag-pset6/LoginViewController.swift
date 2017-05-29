@@ -2,6 +2,8 @@
 //  LoginViewController.swift
 //  FMaandag-pset6
 //
+//  Loads the login screen where an account can be created and the user can login
+//
 //  With help of the tutorial raywenderlich.com/139322/firebase-tutorial-getting-started-2
 //
 //  Created by Fien Maandag on 19-05-17.

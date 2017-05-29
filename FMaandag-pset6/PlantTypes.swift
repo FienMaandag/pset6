@@ -2,9 +2,11 @@
 //  PlantTypes.swift
 //  FMaandag-pset6
 //
+//  With help from the tutorial raywenderlich.com/139322/firebase-tutorial-getting-started-2
+//
 //  Created by Fien Maandag on 19-05-17.
 //  Copyright © 2017 Fien Maandag. All rights reserved.
-//  https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2
+//
 
 import Foundation
 import Firebase

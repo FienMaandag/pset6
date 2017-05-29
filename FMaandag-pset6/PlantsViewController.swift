@@ -2,6 +2,10 @@
 //  PlantsViewController.swift
 //  FMaandag-pset6
 //
+//  Loads the plants the current user has saved
+//
+//  With help from tutotial https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2
+//
 //  Created by Fien Maandag on 19-05-17.
 //  Copyright © 2017 Fien Maandag. All rights reserved.
 //
@@ -25,7 +29,7 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         jsonParser()
         
-        // Log current user in
+        // From tutorial, Login current user
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = CurrentUser(authData: user)
@@ -66,7 +70,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
    
-    //
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let findVC = segue.destination as? FindPlantViewController{
             findVC.allPlants = allPlants

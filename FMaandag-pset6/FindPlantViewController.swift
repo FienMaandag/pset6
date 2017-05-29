@@ -1,8 +1,10 @@
 //
 //  FindPlantViewController.swift
 //  FMaandag-pset6
-// 
-//  With help from the folloeing tutorials 
+//
+//  Shows the plant within de database in which the user can search
+//
+//  With help from the following tutorials
 //  https://github.com/awseeley/Search-Tutorial/blob/master/TableViewTutorial/ViewController.swift
 //  https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2
 //

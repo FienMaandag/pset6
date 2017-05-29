@@ -2,6 +2,8 @@
 //  FoundPlantTableViewCell.swift
 //  FMaandag-pset6
 //
+//  Cell in tableview which loads plants in the database
+//
 //  Created by Fien Maandag on 19-05-17.
 //  Copyright © 2017 Fien Maandag. All rights reserved.
 //
